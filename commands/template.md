@@ -1,7 +1,6 @@
 ---
 description: Create a reusable Codify template (with variables and conditions) for a setup you describe
 argument-hint: <what the template should set up>
-allowed-tools: mcp__plugin_codify_codify__search_resources mcp__plugin_codify_codify__get_resource_schema mcp__plugin_codify_codify__search_parameter_completions mcp__plugin_codify_codify__search_templates mcp__plugin_codify_codify__validate_codify_config Bash(codify validate *) Read Write Edit
 ---
 Create a reusable Codify template for: $ARGUMENTS
 

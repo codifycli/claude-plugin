@@ -1,6 +1,9 @@
 {
   "name": "codify",
-  "owner": { "name": "Codify" },
+  "owner": {
+    "name": "Codify"
+  },
+  "description": "The official Codify plugin for Claude Code.",
   "plugins": [
     {
       "name": "codify",

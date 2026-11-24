@@ -19,8 +19,7 @@ The plugin adds:
 
 Requirements:
 - Claude Code
-- Node.js, used for the login helper
-- The [Codify CLI](https://codifycli.com/docs), logged in with `codify login`
+- Optional: the [Codify CLI](https://codifycli.com/docs), to check and apply the configs Claude writes (`codify validate`, `codify plan`, `codify apply`)
 
 Inside Claude Code:
 
@@ -40,13 +39,9 @@ claude plugin install codify@codify
 
 Run `/mcp` to check that `plugin:codify:codify` is connected.
 
-## Login
+## No login needed
 
-The MCP server needs a Codify login. `scripts/auth-headers.mjs` (a `headersHelper`) reads the token that `codify login` saved in `~/.codify/credentials.json`. Without a login, it uses the CLI's anonymous session (`~/.codify/anonymous-session.json`) if one exists. Claude Code runs the helper on every connection, and again after a 401.
-
-Claude Code only runs the helper in a folder you have trusted. In non-interactive runs (`claude -p`) in a new folder, accept the trust dialog once interactively first.
-
-If the tools stop working, run `codify login` and reconnect the server with `/mcp`.
+The registry tools are public, so the plugin works without a Codify account. You only need to log in to the Codify CLI to use saved variables and secrets, or your private dashboard documents, when you apply a config.
 
 ## Examples
 
@@ -71,11 +66,7 @@ Load the plugin from a checkout without installing it:
 claude --plugin-dir ./
 ```
 
-Point it at another Codify agent server, such as a local `wrangler dev`, with `CODIFY_MCP_URL`:
-
-```bash
-CODIFY_MCP_URL=http://localhost:8787/api/mcp/codify/mcp claude --plugin-dir ./
-```
+To try it against a local `wrangler dev` of the Codify agent server, change the `url` in `.mcp.json` to `http://localhost:8787/api/mcp/codify/mcp`. Don't commit that change.
 
 Check the plugin files:
 

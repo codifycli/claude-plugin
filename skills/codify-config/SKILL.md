@@ -17,7 +17,7 @@ The `codify` MCP server in this plugin gives you the live registry. **Never gues
 | `search_templates` | Find published templates to include instead of re-declaring their resources. |
 | `validate_codify_config` | Validate the whole config (pass it as a JSON5 **string**). Always run it before you hand a config back. |
 
-If the tools fail with 401 or are missing, tell the user to run `codify login` and then reconnect the server with `/mcp`.
+The tools need no login. If they are missing or fail to connect, tell the user to check the server with `/mcp`.
 
 ## Workflow
 
@@ -81,11 +81,14 @@ Use `action` only when no resource type exists. Always give it a `condition` tha
 ```jsonc
 {
   "type": "action",
-  "name": "install-mytool",
-  "condition": "command -v mytool",   // NOT "! command -v mytool"
-  "action": "curl -fsSL https://example.com/install.sh | bash"
+  "name": "init-mytool",
+  "condition": "[ -f \"$HOME/.config/mytool/config.toml\" ]",   // NOT "! [ -f ... ]"
+  "action": "mytool init --defaults",
+  "dependsOn": ["homebrew"]
 }
 ```
+
+Prefer a package manager resource (`homebrew`, `apt`, `npm`, ...) for installing software. Don't write actions that download a script and run it straight away. If a tool only ships an install script, tell the user and let them decide.
 
 Add `"requiresStdin": true` only for steps that need the user at the keyboard (`gh auth login`, `npm create vite@latest`). In a template this enables an interactive bootstrap step after the automated setup.
 

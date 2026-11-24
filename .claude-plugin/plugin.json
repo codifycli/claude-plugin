@@ -1,5 +1,6 @@
 {
   "name": "codify",
+  "displayName": "Codify",
   "version": "0.1.0",
   "description": "Write Codify configs and templates with the live Codify resource registry: resource search, schemas, templates and validation.",
   "author": {

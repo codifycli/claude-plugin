@@ -1,0 +1,11 @@
+{
+  "name": "codify",
+  "owner": { "name": "Codify" },
+  "plugins": [
+    {
+      "name": "codify",
+      "source": "./",
+      "description": "Write Codify configs and templates with the live Codify resource registry."
+    }
+  ]
+}

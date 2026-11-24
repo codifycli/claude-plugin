@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "codify": {
+      "type": "http",
+      "url": "${CODIFY_MCP_URL:-https://agent.codifycli.com/api/mcp/codify/mcp}",
+      "headersHelper": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/auth-headers.mjs\""
+    }
+  }
+}

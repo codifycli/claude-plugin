@@ -2,10 +2,20 @@
   "name": "codify",
   "version": "0.1.0",
   "description": "Write Codify configs and templates with the live Codify resource registry: resource search, schemas, templates and validation.",
-  "author": { "name": "Codify" },
+  "author": {
+    "name": "Codify",
+    "email": "hello@codifycli.com",
+    "url": "https://codifycli.com"
+  },
   "homepage": "https://codifycli.com",
   "license": "Apache-2.0",
   "privacyPolicyUrl": "https://codifycli.com/privacy",
   "repository": "https://github.com/codifycli/claude-plugin",
-  "keywords": ["codify", "dotfiles", "dev-environment", "configuration-as-code", "templates"]
+  "keywords": [
+    "codify",
+    "dotfiles",
+    "dev-environment",
+    "configuration-as-code",
+    "templates"
+  ]
 }
